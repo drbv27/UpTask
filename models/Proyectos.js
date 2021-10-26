@@ -9,13 +9,9 @@ const Proyectos = db.define("proyectos", {
     autoIncrement: true,
   },
 
-  nombre: {
-    type: Sequelize.STRING,
-  },
+  nombre: Sequelize.STRING,
 
-  url: {
-    type: Sequelize.STRING,
-  },
+  url: Sequelize.STRING,
 });
 
 module.exports = Proyectos;
