@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const db = require("./config/db");
 
 //Importar el modelo
-require("./models/Proyecto");
+require("./models/Proyectos");
 
 db.sync()
   .then(() => console.log("Conectado al servidor"))

@@ -1,4 +1,4 @@
-const Proyectos = require("../models/Proyecto");
+const Proyectos = require("../models/Proyectos");
 exports.proyectosHome = (req, res) => {
   res.render("index", {
     nombrePagina: "Proyectos",
