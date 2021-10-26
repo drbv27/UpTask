@@ -5,6 +5,16 @@ const routes = require("./routes");
 const path = require("path");
 const bodyParser = require("body-parser");
 
+//Crear la conexion a la DB
+const db = require("./config/db");
+
+//Importar el modelo
+require("./models/Proyecto");
+
+db.sync()
+  .then(() => console.log("Conectado al servidor"))
+  .catch((error) => console.log(error));
+
 //crear una app de express
 const app = express();
 
