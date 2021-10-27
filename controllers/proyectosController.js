@@ -1,3 +1,4 @@
+const { noExtendRight } = require("sequelize/types/lib/operators");
 const Proyectos = require("../models/Proyectos");
 
 exports.proyectosHome = async (req, res) => {
