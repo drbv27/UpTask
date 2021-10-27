@@ -1,25 +1,19 @@
 const { noExtendRight } = require("sequelize/types/lib/operators");
 const Proyectos = require("../models/Proyectos");
 
-exports.proyectosHome = async (req, res) => {
-  const proyectos = await Proyectos.findAll();
-  //es lo mismo que SELECT * from proyectos
+exports.proyectosHome = (req, res) => {
   res.render("index", {
-    nombrePagina: "Proyectos " /* + res.locals.year */,
-    proyectos,
+    nombrePagina: "Proyectos",
   }); //es el pug
 };
 
-exports.formularioProyecto = async (req, res) => {
-  const proyectos = await Proyectos.findAll();
+exports.formularioProyecto = (req, res) => {
   res.render("nuevoProyecto", {
     nombrePagina: "Nuevo Proyecto",
-    proyectos,
   });
 };
 
 exports.nuevoProyecto = async (req, res) => {
-  const proyectos = await Proyectos.findAll();
   //Enviar a la consola lo que el usuario escriba
   /* console.log(req.body); */
   //validar que si tengamos algo en el input
@@ -34,7 +28,6 @@ exports.nuevoProyecto = async (req, res) => {
     res.render("nuevoProyecto", {
       nombrePagina: "Nuevo Proyecto",
       errores,
-      proyectos,
     });
   } else {
     //no hay errores
